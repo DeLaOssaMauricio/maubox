@@ -1,10 +1,13 @@
-class Filter:
-    def dixon(data_sorted1):
+class Process:
+    def dixon(data):
+
+        clean_data = data.copy()
         # Tu implementación de Dixon aquí
         # ...
-        return data_sorted2
+        return (clean_data)
 
-    def grubbs(alfa_option, data_sorted1):
+    def grubbs(self, data, resultado=[column]):
+        clean_data = data.copy()
         # Tu implementación de Grubbs aquí
         # ...
-        return data_sorted2
+        return (clean_data)
