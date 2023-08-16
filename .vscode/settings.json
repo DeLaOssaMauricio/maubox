@@ -5,6 +5,5 @@
     "python.formatting.provider": "none"
 }
 
-git add .
-git commit -m "Creación clase Process"
+
 
