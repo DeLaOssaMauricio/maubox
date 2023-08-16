@@ -23,3 +23,5 @@ def validate_columns(df):
    missing_cols = set(columns_required) - set(df.columns)
    if missing_cols:
       raise ValueError(f"Columnas faltantes: {missing_cols}")
+   
+   
