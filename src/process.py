@@ -39,7 +39,7 @@ class Process:
         alfa_column = 'ALFA 0.01'
     else:
         print("Opción de alfa no válida")
-        exit()
+        return None
 
     n = len(data)
     # Buscar el valor correspondiente en la columna seleccionada
@@ -135,7 +135,17 @@ class Process:
 
         return(clean_data)
             
-             
+##################################
+#################################
+# 
+##### Para la grafica de antes
+#plots = Plots()
+#plots.grafica_antes(data, ds, media)
+
+#### para la grafica de despues
+
+#plots = Plots()
+#plots.grafica_despues(data_despues, ds_despues, media_despues)     
 
 
 
