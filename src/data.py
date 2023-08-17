@@ -11,38 +11,39 @@ import seaborn as sns
 # Este codigo abre el administrador de archivos pero lo abre detras del VSC debe ser problema de tkinter ya que 
 # con el solamente es que se presenta esa falla
 # Crear una ventana de selección de archivo
-root = tk.Tk()
-root.withdraw()
+### Version 2 final 
 
- # Seleccionar el archivo XLSX o XLS con el Administrador de archivos
-df = filedialog.askopenfilename(filetypes=[
+def load_data():
+    # Crear una ventana de selección de archivo
+    root = tk.Tk()
+    root.withdraw()
+
+    # Seleccionar el archivo XLSX o XLS con el Administrador de archivos
+    file_path = filedialog.askopenfilename(filetypes=[
         ("Archivos Excel", "*.xlsx;*.xls")   
     ])
 
-def load_data(df):
-    
-
-    # Verificar si se seleccionó un archivo
-    if df:
+    if file_path:
         # Obtener la extensión del archivo seleccionado
-        file_extension = df.split(".")[-1]
+        file_extension = file_path.split(".")[-1]
 
         if file_extension in ["xlsx", "xls"]:
             # Cargar el archivo XLSX o XLS en un DataFrame
-            data = pd.read_excel(df)
+            data = pd.read_excel(file_path)
         else:
             print("Formato de archivo no compatible.")
-            data = None
+            return None
 
         if data is not None:
             # Ordenar el DataFrame por la columna "Resultado" de manera ascendente
             data = data.sort_values(by="Resultado")
-            
-            # Retorna el DataFrame ordenado
             return data
         else:
             return None
     else:
         return None
 
-
+# Ejemplo de cómo usar la función
+loaded_data = load_data()
+if loaded_data is not None:
+    print(loaded_data)
